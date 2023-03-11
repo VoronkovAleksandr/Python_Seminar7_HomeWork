@@ -16,10 +16,7 @@
 
 def check_rhythm(text):
     symbol = ['а', 'о', 'у', 'ы', 'э', 'е', 'ё', 'и', 'ю', 'я']
-    res = list()
-    for word in text:
-        res.append(sum(i in symbol for i in word))
-    res = set(res)
+    res = set(list(sum(i in symbol for i in word) for word in text))
     print('Парам пам-пам') if len(res) == 1 else print('Пам парам')
 
 text = list(input('введите стих: ').split())
